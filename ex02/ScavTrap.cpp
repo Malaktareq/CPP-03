@@ -16,6 +16,18 @@ ScavTrap::ScavTrap(const std::string name)
     std::cout << "ScavTrap constructor called for " << name << std::endl;
 }
 
+ScavTrap& ScavTrap::operator=(const ScavTrap &other)
+{
+    if (this != &other)
+    {
+        name = other.name;
+        this->hitPoints = other.hitPoints;
+        this->energyPoints = other.energyPoints;
+        this->attackDamage = other.attackDamage;
+    }
+    return *this;
+}
+
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap destructor called for " << name << std::endl;
